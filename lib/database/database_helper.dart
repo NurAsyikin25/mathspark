@@ -5,6 +5,7 @@ import '../models/soal_kuis.dart';
 import '../models/hasil_kuis.dart';
 import '../models/profil_siswa.dart';
 import '../models/reward.dart';
+import 'seed_data.dart';
 
 class DatabaseHelper {
   static const String _databaseName = 'mathspark.db';
@@ -98,6 +99,9 @@ class DatabaseHelper {
         sudahDapat INTEGER NOT NULL DEFAULT 0
       )
     ''');
+
+    // Seed data awal
+    await SeedData.seed(db);
   }
 
   // ==========================================
